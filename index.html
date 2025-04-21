@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript</title>
+</head>
+<body>
+<script>
+        // 1. Filter out negative numbers
+function filterNegativeNumbers(arr) {
+return arr.filter(num => num >= 0);
+}
+
+        // 2. Get the difference between a given number and 13
+function differenceFrom13(num) {
+if (num <= 13) {
+return 13 - num;
+} 
+else {
+return 2 * Math.abs(num - 13);
+}
+}
+
+        // 3. Fibonacci series
+function fibonacci(n) {
+let fibSeries = [0, 1];
+while (fibSeries.length < n) {
+fibSeries.push(fibSeries[fibSeries.length - 1] + fibSeries[fibSeries.length - 2]);
+}
+return fibSeries;
+}
+
+        // 4. Sum the multiples of 3 and 5 under 1000
+function sumMultiples() {
+let sum = 0;
+for (let i = 0; i < 1000; i++) {
+if (i % 3 === 0 || i % 5 === 0) {
+sum += i;
+}
+}
+return sum;
+}
+
+        // 5. Return cube of a number using function object
+let cubeFunction = {
+cube: function(num) {
+return Math.pow(num, 3);
+}
+};
+
+        // Test the functions
+let numbers = [-1, 2, -3, 4, -5, 6];
+document.write("Original Array: " + numbers + "<br>");
+document.write("Array after filtering negative numbers: " + filterNegativeNumbers(numbers) + "<br><br>");
+
+let num = 15;
+document.write("Number: " + num + "<br>");
+document.write("Difference from 13: " + differenceFrom13(num) + "<br><br>");
+
+let n = 10;
+document.write("Fibonacci series up to " + n + " numbers: " + fibonacci(n) + "<br><br>");
+
+document.write("Sum of multiples of 3 and 5 under 1000: " + sumMultiples() + "<br><br>");
+
+let cubeNum = 5;
+document.write("Cube of " + cubeNum + ": " + cubeFunction.cube(cubeNum));
+</script>
+</body>
+</html>
